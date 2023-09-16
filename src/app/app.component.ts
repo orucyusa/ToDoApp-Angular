@@ -9,6 +9,7 @@ import { Model, ToDoItem} from './model';
 export class AppComponent {
   model = new Model();
   isDisplay = false;
+  nameControl = false;
 
   getName() {
     return this.model.user;
@@ -24,6 +25,10 @@ export class AppComponent {
   addItem(value: any){
     if (value!="") {
         this.model.items.push(new ToDoItem(value,false));
-    }
+    } 
+  }
+  updateName(value: any) {
+    this.nameControl = true;
+    return this.model.user = value;
   }
 }
